@@ -1,0 +1,64 @@
+@import 'theme';
+@import 'grid';
+
+.YellowBorder { border-color: #fff000; }
+.BigBorder { border-width: 10px; }
+.SolidBorder { border-style: solid; }
+.DashedBorder { border-style: dashed; }
+
+.RoundedCorners( @radius: 0 ) {
+  border-radius: @radius;
+  -webkit-border-radius: @radius;
+  -moz-border-radius: @radius;
+}
+
+.big-button {
+  display: inline-block;
+  width: 300px;
+  height: 300px;
+  background: @mainColor;
+  margin: 30px;
+}
+#button1 {
+	.RoundedCorners;
+  .YellowBorder;
+  .DashedBorder;
+  backgroundColor: @mainColor;
+}
+#button2 {
+	.RoundedCorners(25px);
+  .YellowBorder;
+  .SolidBorder;
+  .BigBorder;
+  backgroundColor: @mainColor - #222;
+}
+#button3 {
+	.RoundedCorners(9999px);
+  .YellowBorder;
+  .SolidBorder;
+  backgroundColor: @mainColor + #222
+}
+aside {
+
+	.Cols(1);
+  min-height: 500 * @toRem;
+  background-color: #eee;
+
+  h1 {
+    color: @mainColor;
+    &:hover {
+      background-color: @defaultThemeColor;
+    }
+  }
+}
+
+article {
+  .Cols(3);
+  min-height: 500 * @toRem;
+  background-color: #ddd;
+}
+
+
+
+
+
